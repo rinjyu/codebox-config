@@ -1,0 +1,36 @@
+port:
+  codebox-cloud-config: 8500
+  codebox-boot-admin: 8600
+  codebox-web: 8081
+  codebox-api: 9100
+
+url:
+  codebox-cloud-config: http://codebox-cloud-config
+  codebox-boot-admin: http://codebox-boot-admin
+  codebox-web: http://codebox-web.com
+  codebox-api: http://codebox-api
+
+---
+spring:
+  profiles: local
+
+url:
+  codebox-cloud-config: http://127.0.0.1:${port.codebox-cloud-config}
+  codebox-boot-admin: http://127.0.0.1:${port.codebox-boot-admin}
+  codebox-web: http://127.0.0.1:${port.codebox-web}
+  codebox-api: http://127.0.0.1:${port.codebox-api}
+
+
+---
+spring:
+  profiles: dev
+
+
+---
+spring:
+  profiles: stag
+
+
+---
+spring:
+  profiles: prod
