@@ -20,6 +20,16 @@ url:
   codebox-web: http://127.0.0.1:${port.codebox-web}
   codebox-api: http://127.0.0.1:${port.codebox-api}
 
+logging:
+  group:
+    tomcat: "org.apache.catalina,org.apache.coyote,org.apache.tomcat"
+  level:
+    root: debug
+    tomcat: trace
+    web: debug
+    sql: error
+    com.app: trace
+
 
 ---
 spring:
