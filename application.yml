@@ -12,7 +12,9 @@ url:
 
 ---
 spring:
-  profiles: local
+  config:
+    activate:
+      on-profile: local
 
 url:
   codebox-cloud-config: http://127.0.0.1:${port.codebox-cloud-config}
@@ -30,17 +32,20 @@ logging:
     sql: error
     com.app: trace
 
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
 
 ---
 spring:
-  profiles: dev
-
-
----
-spring:
-  profiles: stag
-
+  config:
+    activate:
+      on-profile: stag
 
 ---
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
